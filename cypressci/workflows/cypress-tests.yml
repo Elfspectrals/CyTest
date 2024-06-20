@@ -1,0 +1,28 @@
+# .github/workflows/cypress-tests.yml
+
+name: Run Cypress Tests
+
+on:
+  pull_request:
+    branches:
+      - main # Adjust to your main branch name
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "14"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run Cypress tests
+        run: npm run test:headless # Adjust to your Cypress test script
+
