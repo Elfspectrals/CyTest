@@ -4,13 +4,13 @@ jobs:
   install:
     runs-on: ubuntu-latest
     steps:
-    -name: Checkout
-      uses: actions/checkout@v2
-    -name: Install modules
-      run: npm ci
-    -name: Cypress run
-      uses: cypress-io/github-action@v3
-      with:
-        browser: chrome
-        record: true
-        command-prefix: 'npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}'
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install modules
+        run: npm ci
+      - name: Cypress run
+        uses: cypress-io/github-action@v3
+        with:
+          browser: chrome
+          record: true
+          command-prefix: "npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}"
