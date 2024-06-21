@@ -1,5 +1,7 @@
 name: Run cypress test
+
 on: [push]
+
 jobs:
   install:
     runs-on: ubuntu-latest
@@ -7,7 +9,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Install modules
-        run: npm ci
+        run: npm install
       - name: Cypress run
         uses: cypress-io/github-action@v3
         with:
