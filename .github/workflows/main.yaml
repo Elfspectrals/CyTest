@@ -13,4 +13,3 @@ jobs:
         with:
           browser: chrome
           record: true
-          command-prefix: "npx cypress run --record --key ${{ secrets.CYPRESS_RECORD_KEY }}"
